@@ -26,3 +26,4 @@ if(!function_exists('nav_item')){
 
 <?= nav_item('/', 'Accueil')?>
 <?= nav_item('/contact', 'Contact')?>
+<?= nav_item('/competences', 'Compétences')?>

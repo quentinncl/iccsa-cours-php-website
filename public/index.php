@@ -9,6 +9,7 @@
     // Accès aux différentes vue
     $router->map('GET', '/', 'home');
     $router->map('GET', '/contact', 'contact');
+    $router->map('GET', '/competences', 'competences');
 
     // traitement de formulaire
     $router->map('POST', '/sendMail', '../utils/traitement-form');
