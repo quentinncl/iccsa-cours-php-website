@@ -1,6 +1,8 @@
 <?php
     require '../vendor/autoload.php';
 
+    $dotenv = Dotenv\Dotenv::createImmutable('../');
+    $dotenv->load();
     
     $uri = $_SERVER['REQUEST_URI'];
     

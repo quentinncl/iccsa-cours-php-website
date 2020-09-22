@@ -2,9 +2,8 @@
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\SMTP;
   use PHPMailer\PHPMailer\Exception;
-  
-  require '../vendor/autoload.php';
-  
+
+  $dotenv->required(['HOST', 'USERNAME', 'PASSWORD']);
   
   if(isset($_POST['email']) && isset($_POST['body']) && isset($_POST['name']) && isset($_POST['firstname'])) {
       $mail = new PHPMailer(true);
@@ -18,10 +17,10 @@
           //Server settings
           $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
           $mail->isSMTP();                                            // Send using SMTP
-          $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+          $mail->Host       = $_ENV['HOST'];                    // Set the SMTP server to send through
           $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-          $mail->Username   = 'qnicolle17@gmail.com';                     // SMTP username
-          $mail->Password   = 'notrealpassword';                               // SMTP password
+          $mail->Username   = $_ENV['USERNAME'];                     // SMTP username
+          $mail->Password   = $_ENV['PASSWORD'];                               // SMTP password
           $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
           $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
       

@@ -1,0 +1,19 @@
+{
+  "name": "quentinncl/project",
+  "authors": [
+    {
+      "name": "quentinncl",
+      "email": "qnicolle17@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": ""
+    }
+  },
+  "require": {
+    "altorouter/altorouter": "^2.0",
+    "phpmailer/phpmailer": "^6.1",
+    "vlucas/phpdotenv": "^5.2"
+  }
+}
